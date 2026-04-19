@@ -19,10 +19,10 @@ jobs:
         dotnet-version: '8.0.x'
         
     - name: Restore dependencies
-      run: dotnet restore TouchLinkHost/TouchLinkHost.csproj
+      run: dotnet restore .github/TouchLinkHost/TouchLinkHost.csproj
       
     - name: Build
-      run: dotnet build TouchLinkHost/TouchLinkHost.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o ./publish
+      run: dotnet build .github/TouchLinkHost/TouchLinkHost.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o ./publish
       
     - name: Upload artifact
       uses: actions/upload-artifact@v4
